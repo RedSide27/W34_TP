@@ -27,44 +27,44 @@
 			<div class="row">
 				<div class="col-md-4 col-sm-6">
 					<div class="center">
-						<i class="icon-apple icon-md icon-color1"></i>
+						<i class="icon-thumbs-up icon-md icon-color2"></i>
 						<h4>Réjean, QC</h4>
 						<p>Avant je me suis fait arnaquer sur plein de site...depuis que j'achete ici, je me sens plus en sécuriter</p>
 					</div>
 				</div><!--/.col-md-4-->
 				<div class="col-md-4 col-sm-6">
 					<div class="center">
-						<i class="icon-android icon-md icon-color2"></i>
-						<h4>Réjean, QC</h4>
-						<p>Avant je me suis fait arnaquer sur plein de site...depuis que j'achete ici, je me sens plus en sécuriter</p>
+						<i class="icon-thumbs-up icon-md icon-color2"></i>
+						<h4>Michel, Abitibi</h4>
+						<p>J'aime se site les prix sont bon !!</p>
 					</div>
 				</div><!--/.col-md-4-->
 				<div class="col-md-4 col-sm-6">
 					<div class="center">
-						<i class="icon-windows icon-md icon-color3"></i>
-						<h4>Réjean, QC</h4>
-						<p>Avant je me suis fait arnaquer sur plein de site...depuis que j'achete ici, je me sens plus en sécuriter</p>
+						<i class="icon-thumbs-down icon-md icon-color1"></i>
+						<h4>Jonathan, Paris</h4>
+						<p>J'ai eu un mauvais service après que j'ai supprimer les skin de mon ordinateur</p>
 					</div>
 				</div><!--/.col-md-4-->
 				<div class="col-md-4 col-sm-6">
 					<div class="center">
-						<i class="icon-html5 icon-md icon-color4"></i>
-						<h4>Réjean, QC</h4>
-						<p>Avant je me suis fait arnaquer sur plein de site...depuis que j'achete ici, je me sens plus en sécuriter</p>
+						<i class="icon-thumbs-down icon-md icon-color1"></i>
+						<h4>Jennifer, Saguenay</h4>
+						<p>J'aime pas se site je suis toujours perdu SA MARCHE PASS !!</p>
 					</div>
 				</div><!--/.col-md-4-->
 				<div class="col-md-4 col-sm-6">
 					<div class="center">
-						<i class="icon-css3 icon-md icon-color5"></i>
-						<h4>Réjean, QC</h4>
-						<p>Avant je me suis fait arnaquer sur plein de site...depuis que j'achete ici, je me sens plus en sécuriter</p>
+						<i class="icon-thumbs-up icon-md icon-color2"></i>
+						<h4>Guillaume, Louiseville</h4>
+						<p>c funcking nice comme site les mek</p>
 					</div>
 				</div><!--/.col-md-4-->
 				<div class="col-md-4 col-sm-6">
 					<div class="center">
-						<i class="icon-thumbs-up icon-md icon-color6"></i>
-						<h4>Réjean, QC</h4>
-						<p>Avant je me suis fait arnaquer sur plein de site...depuis que j'achete ici, je suis FOU de SHARKNADOOO !!</p>
+						<i class="icon-thumbs-up icon-md icon-color2"></i>
+						<h4>Louis-Thomas, Outaouais</h4>
+						<p>Les prix sont tellement bas que je ne peut plus me passer de se site !! Surtout depuis qu'il ont r'ajouter le système vote !</p>
 					</div>
 				</div><!--/.col-md-4-->
 			</div><!--/.row-->
