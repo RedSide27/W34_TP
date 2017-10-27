@@ -9,7 +9,9 @@ if(isset($_GET["disconnect"])){
     //redirige l'utilisateur vers l'accueil
     header("Location:index.php?page=accueil");
 }
+
 $loginsuccess = false;
+/*
 if(isset($_POST["login"])){
     if(!empty($_POST["username"]) && !empty($_POST["pwd"])) {
         $user = $_POST["username"];
@@ -54,6 +56,7 @@ if(isset($_POST["register"])){
         fclose($fichier);
     }
 }
+*/
 
 
 ?>
