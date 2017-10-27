@@ -6,7 +6,41 @@
  * Date: 2017-09-30
  * Time: 17:29
  */
+$mysqli = new mysqli('localhost','root','','tpW34');
+$query = "SELECT * FROM users";
+$result = $mysqli->query($query);
+/*
+if(isset($_POST['login'])){
+    if(!empty($_POST['username']) && !empty($_POST['password'])) {
+        while($row = $result->fetch_asos()) {
+            if($_POST['username'] == $row['Username'] && $_POST['password'] == $row['Password']) {
+                $_SESSION["login"] = $_POST['username'];
+                $loginsuccess = true;
+                header("Location:index.php?page=accueil");
+            }
+        }
+    }
+}
+*/
+if(isset($_POST["login"])){
+    if(!empty($_POST["username"]) && !empty($_POST["pwd"])) {
+        $user = $_POST["username"];
+        $pwd = $_POST["pwd"];
+
+        while($row = $result->fetch_assoc()) {
+            if($user == $row['Username'] && $pwd == $row['Password']) {
+
+                $_SESSION["login"] = $user;
+                $loginsuccess = true;
+                header("Location:index.php?page=accueil");
+            }
+        }
+    }
+}
+
 ?>
+
+
 
 <div class="container" style="margin-top: 100px">
 	<div class="box">
