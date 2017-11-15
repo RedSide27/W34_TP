@@ -1,3 +1,21 @@
+<?php
+$mysqli = new mysqli('localhost','root','','minewatch');
+
+	if(isset($_POST["SendPack"])){
+		$PackName = $_POST["nom"];
+		$Prix = $_POST["prix"];
+		$item1 = $_POST["item1"];
+        $item2 = $_POST["item3"];
+        $item3 = $_POST["item3"];
+        $item4 = $_POST["item4"];
+        $item5 = $_POST["item5"];
+        if(!empty($PackName) || !empty($Prix) || !empty($item1) || !empty($item2) || !empty($item3) || !empty($item4) || !empty($item5)){
+        	$query = "INSERT INTO `pack_skin`(`Pack_ID`, `Pack_Name`, `Pack_Price`, `Pack_Skin_ID1`, `Pack_Skin_ID2`, `Pack_Skin_ID3`, `Pack_Skin_ID4`, `Pack_Skin_ID5`) VALUES (0,'$PackName',$Prix,'$item1','$item2','$item3','$item4','$item5')";
+        	$mysqli->query($query);
+        }
+	}
+?>
+
 <html>
 <body ng-app>
     <section id="pricing">
@@ -6,6 +24,7 @@
                 <div class="center">
                     <h2>Ajouter Pack de skins</h2>
                 </div><!--/.center-->
+	            <form method="post" action="#">
                 <div class="center">
                     <select>
                         <option>Overwatch</option>
@@ -17,10 +36,10 @@
 
                     <div style="background-color: #5bc0de" class="col-sm-4 col-sm-offset-2">
                         <ul class="plan featured">
-                            Nom
+                            Titre
                             <li class="plan-name"><input type="text" ng-model="nomPack" name="nom"></li>
                             Prix
-                            <li class="plan-name"><input type="number" ng-model="prixPack" ng-required="number" required></li>
+                            <li class="plan-name"><input type="number" name="prix" ng-model="prixPack" ng-required="number" required></li>
                             Item1
                             <li><input type="text" ng-model="item1" name="item1"></li>
                             Item2
@@ -31,10 +50,11 @@
                             <li><input type="text" ng-model="item4" name="item4"></li>
                             Item5
                             <li><input type="text" ng-model="item5" name="item5"></li>
+	                        <li><input class="btn btn-primary btn-lg" type="submit" name="SendPack" value="Envoyé"></li>
 
-                            <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Acheter</a></li>
                         </ul>
                     </div><!--/.col-sm-4-->
+	            </form>
                     <div style="background-color: #5bc0de;margin-left: 50px" class="col-sm-4">
                         <ul class="plan">
                             <li class="plan-name">{{nomPack}}</li>
