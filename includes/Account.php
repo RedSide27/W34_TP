@@ -18,8 +18,8 @@
                         <div class="col-md-offset-2" >
                          <div class="col-md-10">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input style="float: left;" type="text" readonly class="form-control" name="username" />
+                                <label>Prénom</label>
+                                <input style="float: left;" type="text" readonly class="form-control" name="name" />
                                 </button>
                             </div>
                         </div>
@@ -27,6 +27,54 @@
                         <span class="glyphicon glyphicon-pencil"></span></div>
                     </div>
             </div>
+	        <div class="row">
+		        <div class="col-md-offset-2" >
+			        <div class="col-md-10">
+				        <div class="form-group">
+					        <label>Nom</label>
+					        <input type="text" readonly class="form-control" name="lastname" />
+				        </div>
+			        </div>
+		        </div>
+	        </div>
+	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
+			        <span class="glyphicon glyphicon-pencil"></span></div>
+			        <div class="row">
+				        <div class="col-md-offset-2" >
+					        <div class="col-md-10">
+						        <div class="form-group">
+							        <label>Username</label>
+							        <input type="text" readonly class="form-control" name="username" />
+						        </div>
+					        </div>
+				        </div>
+			        </div>
+	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
+			        <span class="glyphicon glyphicon-pencil"></span></div>
+					        <div class="row">
+						        <div class="col-md-offset-2" >
+							        <div class="col-md-10">
+								        <div class="form-group">
+									        <label>Téléphone</label>
+									        <input type="text" readonly class="form-control" name="telephone" />
+								        </div>
+							        </div>
+						        </div>
+					        </div>
+	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
+			        <span class="glyphicon glyphicon-pencil"></span></div>
+							        <div class="row">
+								        <div class="col-md-offset-2" >
+									        <div class="col-md-10">
+										        <div class="form-group">
+											        <label>Adresse</label>
+											        <input type="text" readonly class="form-control" name="adresse" />
+										        </div>
+									        </div>
+								        </div>
+							        </div>
+	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
+			        <span class="glyphicon glyphicon-pencil"></span></div>
             <div class="row">
                 <div class="col-md-offset-2" >
                     <div class="col-md-10">
@@ -38,18 +86,6 @@
                 </div>
                 <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
                         <span class="glyphicon glyphicon-pencil"></span></div>
-            </div>
-            <div class="row">
-                <div class="col-md-offset-2" >
-                    <div class="col-md-10">
-                    <div class="form-group">
-                        <label>Confirmation email</label>
-                        <input type="text" readonly class="form-control" name="emailConfirm" />
-                    </div>
-                </div>
-                <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-pencil"></span></div>
-            </div>
             <div class="row">
                 <div class="col-md-offset-2" >
                     <div class="col-md-10">

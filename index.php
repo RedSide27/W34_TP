@@ -11,54 +11,6 @@ if(isset($_GET["disconnect"])){
 }
 
 $loginsuccess = false;
-/*
-if(isset($_POST["login"])){
-    if(!empty($_POST["username"]) && !empty($_POST["pwd"])) {
-        $user = $_POST["username"];
-        $pwd = $_POST["pwd"];
-        $fichier = fopen("users.txt", "r");
-
-        while ($ligne = fgets($fichier)) {
-            $mot = explode(";", $ligne);
-
-            if ($user == $mot[0] && $pwd  == $mot[1]) {
-                $_SESSION["login"] = $user;
-                $loginsuccess = true;
-                header("Location:index.php?page=accueil");
-            }
-        }
-        fclose($fichier);
-    }
-}
-if(isset($_POST["register"])){
-    if(!empty($_POST["username"]) && !empty($_POST["pwd"])) {
-        $user = $_POST["username"];
-        $pwd = $_POST["pwd"];
-        $fichier = fopen("users.txt", "a+");
-        $copy = fopen("users.txt", "r");
-
-        while ($ligne = fgets($copy)) {
-            $mot = explode(";", $ligne);
-            if ($user == $mot[0]) {
-                $present = true;
-            }
-        }
-
-        if ($present == false) {
-            fwrite($fichier,"\n");
-            fwrite($fichier,$user);
-            fwrite($fichier, ";" . $pwd . ";");
-            header("Location:index.php?page=login");
-        }else{
-            echo "<h1>tu suck</h1>";
-        }
-
-        fclose($fichier);
-    }
-}
-*/
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,6 +77,9 @@ if(isset($_POST["register"])){
 if(isset($_GET["page"])){
     $page = $_GET["page"];
     switch ($page) {
+        case "accueil" :
+            include ("includes/accueil.php");
+            break;
         case "shop" :
             include ("includes/shop.php");
             break;

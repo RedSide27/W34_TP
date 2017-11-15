@@ -83,7 +83,7 @@
 				<li class="portfolio-item overwatch">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img src="images/portfolio/thumb/item1.jpg" alt="">
+							<img src="images/item1.jpg" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item1.jpg"><i class="icon-eye-open"></i></a>
 							</div>
@@ -94,7 +94,7 @@
 				<li class="portfolio-item minecraft">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img style="height: 235px;width: 235px;" src="images/portfolio/thumb/Skin1.png" alt="">
+							<img style="height: 235px;width: 235px;" src="images/Skin1.png" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item2.jpg"><i class="icon-eye-open"></i></a>
 							</div>
@@ -105,7 +105,7 @@
 				<li class="portfolio-item minecraft">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img style="height: 235px;width: 235px;" src="images/portfolio/thumb/Skin11.png" alt="">
+							<img style="height: 235px;width: 235px;" src="images/Skin11.png" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item3.jpg"><i class="icon-eye-open"></i></a>
 							</div>
@@ -116,7 +116,7 @@
 				<li class="portfolio-item joomla overwatch">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img src="images/portfolio/thumb/item4.jpg" alt="">
+							<img src="images/item4.jpg" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item4.jpg"><i class="icon-eye-open"></i></a>
 							</div>
@@ -127,7 +127,7 @@
 				<li class="portfolio-item overwatch">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img src="images/portfolio/thumb/item5.jpg" alt="">
+							<img src="images/item5.jpg" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item5.jpg"><i class="icon-eye-open"></i></a>
 							</div>
@@ -138,7 +138,7 @@
 				<li class="portfolio-item minecraft">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img style="height: 235px;width: 235px;" src="images/portfolio/thumb/Skin6.png" alt="">
+							<img style="height: 235px;width: 235px;" src="images/Skin6.png" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item6.jpg"><i class="icon-eye-open"></i></a>
 							</div>
@@ -149,7 +149,7 @@
 				<li class="portfolio-item minecraft">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img style="height: 235px;width: 235px;" src="images/portfolio/thumb/Skin3.png" alt="">
+							<img style="height: 235px;width: 235px;" src="images/Skin3.png" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item5.jpg"><i class="icon-eye-open"></i></a>
 							</div>
@@ -160,7 +160,7 @@
 				<li class="portfolio-item overwatch">
 					<div class="item-inner">
 						<div class="portfolio-image">
-							<img src="images/portfolio/thumb/item6.jpg" alt="">
+							<img src="images/item6.jpg" alt="">
 							<div class="overlay">
 								<a class="preview btn btn-danger" title="Lorem ipsum dolor sit amet" href="images/portfolio/full/item6.jpg"><i class="icon-eye-open"></i></a>
 							</div>

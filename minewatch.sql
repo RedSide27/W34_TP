@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 27 oct. 2017 à 19:05
+-- Généré le :  ven. 10 nov. 2017 à 18:26
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `minewatch`
 --
+CREATE DATABASE IF NOT EXISTS `minewatch` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `minewatch`;
 
 -- --------------------------------------------------------
 
@@ -117,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `skin` (
 --
 
 INSERT INTO `skin` (`Skin_ID`, `Skin_Name`, `Skin_Description`, `Skin_PATH`, `Skin_Yes`, `Skin_No`, `FK_Categorie_ID`) VALUES
-(1, 'Melon d\'eau', 'Skin de base', 'images\\Skin1.png', 15, 6, 1),
+(1, 'Melon d\'eau', 'Skin de base', 'images\\Skin1.png', 24, 15, 0),
 (2, 'Flash', 'Skin de Luxe', 'images\\Skin2.png', 45, 3, 1),
 (3, 'Multicolor', 'Skin premium', 'images\\Skin3.png', 5, 1, 1),
 (4, 'Iron Man', 'Skin Premium', 'images\\Skin4.png', 89, 15, 1),
@@ -159,11 +161,21 @@ CREATE TABLE IF NOT EXISTS `users` (
   `User_Inscription` date NOT NULL,
   `User_Phone` varchar(14) NOT NULL,
   `User_Adresse` varchar(75) NOT NULL,
-  `IsConfirm` tinyint(1) NOT NULL DEFAULT '0',
-  `IsAdmin` tinyint(1) NOT NULL DEFAULT '0',
-  `FK_Order_ID` int(11) NOT NULL,
+  `IsConfirm` tinyint(1) DEFAULT '0',
+  `IsAdmin` tinyint(1) DEFAULT '0',
+  `FK_Order_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`User_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`User_ID`, `Username`, `Password`, `User_LastName`, `User_FirstName`, `User_Email`, `User_Inscription`, `User_Phone`, `User_Adresse`, `IsConfirm`, `IsAdmin`, `FK_Order_ID`) VALUES
+(1, 'Zoombo', 'Zoombo', 'Tremblay', 'Bob', 'bob@xd.ca', '2017-10-04', '418-376-5656', '444 chemin du xd', 0, 0, 1),
+(2, 'Bob10101', 'allo123', 'Binette', 'Boby', 'bob@das.com', '2017-11-08', '418-420-6969', 'Chemin du lol', 0, 0, 1),
+(3, 'Bob10101', 'allo123', 'Binette', 'Boby', 'bob@das.com', '2017-11-08', '418-420-6969', 'Chemin du lol', 0, 0, 1),
+(4, 'Bob10101', 'allo123', 'Binette', 'Boby', 'bob@das.com', '2017-11-08', '418-420-6969', 'Chemin du lol', 0, 0, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
