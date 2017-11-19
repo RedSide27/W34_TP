@@ -6,7 +6,7 @@
  * Date: 2017-09-30
  * Time: 17:29
  */
-$mysqli = new mysqli('localhost','root','','tpW34');
+$mysqli = new mysqli('localhost','root','','minewatch');
 $query = "SELECT * FROM users";
 $result = $mysqli->query($query);
 /*

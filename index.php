@@ -1,5 +1,5 @@
 <?php
-
+$mysqli = new mysqli('localhost','root','','minewatch');
 session_start();
 // s'il y a le mot disconnect dans l'url unset($_SESSION{"login"});
 // On peur recuperer la variable disconnect dans l'url avec $_GET["disconnect"]
@@ -10,6 +10,46 @@ if(isset($_GET["disconnect"])){
     header("Location:index.php?page=accueil");
 }
 
+if(!isset($_SESSION["cart"])){
+    $_SESSION["cart"] = array();
+}
+
+if(isset($_GET["delete"])){
+    $index = $_GET["delete"];
+
+    unset($_SESSION["cart"][$index]);
+
+    //Reconstruire les indexs
+    $_SESSION["cart"] = array_values($_SESSION["cart"]);
+    header("location:index.php?page=cart");
+}
+
+if (isset($_POST["AddCart"])) {
+
+    $itemExist = false;
+	$qty = 1;
+    while ($element = each($_POST)) {
+        echo $element["key"] . " " . $element["value"];
+        if ($element["key"] == "PackID") {
+            $productCode = $element["value"];
+        }
+    }
+    //Vérifier si l'article est déjà dans le panier
+    for ($i = 0; $i < count($_SESSION["cart"]); $i++) {
+        $parts = explode(";", $_SESSION["cart"][$i]);
+
+        if ($productCode == $parts[0]) {
+            $itemExist = true;
+            $_SESSION["cart"][$i] = $productCode . ";" . $qty += 1;
+            break;
+        }
+    }
+
+    if (!$itemExist) {
+        $_SESSION["cart"][] = $productCode . ";" . $qty;
+    }
+	print_r($_SESSION["cart"]);
+}
 $loginsuccess = false;
 ?>
 <!DOCTYPE html>
@@ -53,8 +93,10 @@ $loginsuccess = false;
                     <li class="active"><a href="index.php?page=accueil"><i class="icon-home"></i></a></li>
                     <li><a href="index.php?page=PackSkin">Pack de Skins</a></li>
                     <li><a href="index.php?page=shop">Prochain Skin</a></li>
+	                <li><a href="index.php?page=cart">Panier<?="(" . count($_SESSION["cart"]) . ")"?></a></li>
                     <?php
                     if(isset($_SESSION["login"])){
+                        echo  '<li><a href="index.php?page=Account">Mon Account</a></li>';
                         echo '<li><a class="menu" href="index.php?disconnect">Disconnect</a></li>';
                     }
                     else {
@@ -62,7 +104,6 @@ $loginsuccess = false;
                         <li><a class="menu" href="index.php?page=login">login</a></li>
                         <li><a class="menu" href="index.php?page=register">Register</a></li>
                         <li><a href="index.php?page=admin">Admin</a></li>
-                        <li><a href="index.php?page=Account">Mon Account</a></li>
                         <?php
                     }
                     ?>
@@ -97,6 +138,9 @@ if(isset($_GET["page"])){
             break;
         case "admin" :
             include ("includes/admin.php");
+            break;
+        case "cart" :
+            include ("includes/cart.php");
             break;
         default:
             include  ("includes/accueil.php");

@@ -23,6 +23,8 @@ $cpt = 0;
 					$cpt +=1;
                     if (($cpt % 3) == 0){
 				?>
+	                    <form method="POST" action="#">
+	                    <input type="hidden" value="<?= $row["Pack_ID"] ?>" name="PackID">
 				<div class="col-sm-4">
 					<ul class="plan">
 						<li class="plan-name"><?= $row["Pack_Name"] ?></li>
@@ -32,26 +34,15 @@ $cpt = 0;
 						<li><?= $row["Pack_Skin_ID3"] ?></li>
 						<li><?= $row["Pack_Skin_ID4"] ?></li>
 						<li><?= $row["Pack_Skin_ID5"] ?></li>
-						<li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Acheter</a></li>
+						<li class="plan-action"><input type="submit" name="AddCart" value="Ajouter" class="btn btn-primary btn-lg"></li>
 					</ul>
 				</div><!--/.col-sm-4-->
+	                    </form>
                 <?php
                 } elseif (($cpt % 3) == 1) {
                     ?>
-					<div class="col-sm-4">
-						<ul class="plan featured">
-							<li class="plan-name"><?= $row["Pack_Name"] ?></li>
-							<li class="plan-price"><?= $row["Pack_Price"] ?></li>
-							<li><?= $row["Pack_Skin_ID1"] ?></li>
-							<li><?= $row["Pack_Skin_ID2"] ?></li>
-							<li><?= $row["Pack_Skin_ID3"] ?></li>
-							<li><?= $row["Pack_Skin_ID4"] ?></li>
-							<li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Acheter</a></li>
-						</ul>
-					</div><!--/.col-sm-4-->
-                    <?php
-                } elseif (($cpt % 3) == 2) {
-                    ?>
+	                    <form method="POST" action="#">
+	                    <input type="hidden" value="<?= $row["Pack_ID"] ?>" name="PackID">
 					<div class="col-sm-4">
 						<ul class="plan">
 							<li class="plan-name"><?= $row["Pack_Name"] ?></li>
@@ -60,10 +51,28 @@ $cpt = 0;
 							<li><?= $row["Pack_Skin_ID2"] ?></li>
 							<li><?= $row["Pack_Skin_ID3"] ?></li>
 							<li><?= $row["Pack_Skin_ID4"] ?></li>
-							<li><?= $row["Pack_Skin_ID5"] ?></li>
-							<li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Acheter</a></li>
+							<li class="plan-action"><input type="submit" name="AddCart" value="Ajouter" class="btn btn-primary btn-lg"></li>
 						</ul>
 					</div><!--/.col-sm-4-->
+	                    </form>
+                    <?php
+                } elseif (($cpt % 3) == 2) {
+                    ?>
+	                    <form method="POST" action="#">
+	                    <input type="hidden" value="<?= $row["Pack_ID"] ?>" name="PackID">
+					<div class="col-sm-4">
+						<ul class="plan featured">
+							<li class="plan-name"><?= $row["Pack_Name"] ?></li>
+							<li class="plan-price"><?= $row["Pack_Price"] ?></li>
+							<li><?= $row["Pack_Skin_ID1"] ?></li>
+							<li><?= $row["Pack_Skin_ID2"] ?></li>
+							<li><?= $row["Pack_Skin_ID3"] ?></li>
+							<li><?= $row["Pack_Skin_ID4"] ?></li>
+							<li><?= $row["Pack_Skin_ID5"] ?></li>
+							<li class="plan-action"><input type="submit" name="AddCart" value="Ajouter" class="btn btn-primary btn-lg "></li>
+						</ul>
+					</div><!--/.col-sm-4-->
+				</form>
                     <?php
                 }else{
 
