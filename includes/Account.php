@@ -3,10 +3,11 @@
 	$(document).ready(function() {
 		$("#Edit").click(function () {
 		$(".form-control").prop("readonly", false);
-		$("#pwd").prop("type","text")
+		$("#pwd").prop("type","text");
 		})
 	});
 </script>
+
 <?php
 $mysqli = new mysqli('localhost','root','','minewatch');
 // print_r($_SESSION["login"]);

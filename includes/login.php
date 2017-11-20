@@ -31,7 +31,7 @@ if(isset($_POST["login"])){
         while($row = $result->fetch_assoc()) {
             if($user == $row['Username'] && $pwd == $row['Password']) {
 
-                $_SESSION["login"] = $user;
+                $_SESSION["login"] = $row["User_ID"];
                 $loginsuccess = true;
                 if ($row["IsAdmin"] == 1) {
                    $_SESSION["isAdmin"] = true;

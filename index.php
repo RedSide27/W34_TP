@@ -11,6 +11,10 @@ if(isset($_GET["disconnect"])){
     header("Location:index.php?page=accueil");
 }
 
+if(!isset($_SESSION["isAdmin"])){
+    $_SESSION["isAdmin"] = false;
+}
+
 if(!isset($_SESSION["cart"])){
     $_SESSION["cart"] = array();
 }
@@ -80,13 +84,7 @@ $loginsuccess = false;
 <header id="header" role="banner">
     <div class="container">
         <div id="navbar" class="navbar navbar-default">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <div style="width: 200px;" class="navbar-header">
                 <a class="navbar-brand" href="index.php?page=accueil"></a>
             </div>
             <div class="collapse navbar-collapse">

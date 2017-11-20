@@ -1,4 +1,5 @@
 <?php
+$_SESSION["UploadIMGTEST"] = false;
 $target_dir = "../images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -27,8 +28,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
     $uploadOk = 0;
 }
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG" && $imageFileType != "GIF" ) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
 }
@@ -38,11 +38,14 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+
+        $_SESSION["UploadIMGTEST"] = true;
+        $_SESSION["UploadIMG"] = "<div class='alert alert-success'><strong>Success!</strong> Image Enregistrer avec Succèes</div>";
+        header("Location:..\index.php?page=admin");
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
-    
+
     //var_dump($_FILES["fileToUpload"]);
 }
 ?>
