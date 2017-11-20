@@ -9,6 +9,7 @@
 $mysqli = new mysqli('localhost','root','','minewatch');
 $query = "SELECT * FROM users";
 $result = $mysqli->query($query);
+$_SESSION["isAdmin"] = false;
 /*
 if(isset($_POST['login'])){
     if(!empty($_POST['username']) && !empty($_POST['password'])) {
@@ -30,9 +31,13 @@ if(isset($_POST["login"])){
         while($row = $result->fetch_assoc()) {
             if($user == $row['Username'] && $pwd == $row['Password']) {
 
-                $_SESSION["login"] = $row["User_ID"];
+                $_SESSION["login"] = $user;
                 $loginsuccess = true;
+                if ($row["IsAdmin"] == 1) {
+                   $_SESSION["isAdmin"] = true;
+                }
                 header("Location:index.php?page=accueil");
+
             }
         }
     }

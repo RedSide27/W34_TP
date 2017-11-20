@@ -79,20 +79,22 @@ $mysqli = new mysqli('localhost','root','','minewatch');
 			        </div>
 		        </div>
 	        </div>
-	        <div class="col-md-offset-2" >
-		        <div class="col-md-10">
-			        <div class="form-group">
-				        <input type="file" class="form-control" name="Image" />
-			        </div>
-		        </div>
-	        </div>
-	        <div class="col-md-offset-2" >
-		        <div class="col-md-10">
-			        <div class="form-group">
-				        <input type="submit" class="btn btn-primary" value="Envoyé" name="AddSkin">
-			        </div>
-		        </div>
-	        </div>
+            <form method="POST" action="includes/upload.php" enctype="multipart/form-data">
+    	        <div class="col-md-offset-2" >
+    		        <div class="col-md-10">
+    			        <div class="form-group">
+    				        <input type="file" class="form-control" name="fileToUpload" id="fileToUpload" />
+    			        </div>
+    		        </div>
+    	        </div>
+    	        <div class="col-md-offset-2" >
+    		        <div class="col-md-10">
+    			        <div class="form-group">
+    				        <input type="submit" class="btn btn-primary" value="submit" name="AddSkin">
+    			        </div>
+    		        </div>
+    	        </div>
+            </form>
                 </div>
         </div>
     </section>

@@ -6,6 +6,7 @@ session_start();
 if(isset($_GET["disconnect"])){
     //Detruire une session
     unset($_SESSION["login"]);
+    unset($_SESSION["isAdmin"]);
     //redirige l'utilisateur vers l'accueil
     header("Location:index.php?page=accueil");
 }
@@ -96,14 +97,17 @@ $loginsuccess = false;
 	                <li><a href="index.php?page=cart">Panier<?="(" . count($_SESSION["cart"]) . ")"?></a></li>
                     <?php
                     if(isset($_SESSION["login"])){
-                        echo  '<li><a href="index.php?page=Account">Mon Account</a></li>';
-                        echo '<li><a class="menu" href="index.php?disconnect">Disconnect</a></li>';
+                        if($_SESSION["isAdmin"] == true) {
+                            echo '<li><a href="index.php?page=admin">Admin</a></li>';
+                        }
+                        echo '<li><a href="index.php?page=Account">Mon Account</a></li>';
+                        echo '<li><a class="menu" href="index.php?disconnect">Disconnect</a></li>';           
                     }
                     else {
                         ?>
                         <li><a class="menu" href="index.php?page=login">login</a></li>
                         <li><a class="menu" href="index.php?page=register">Register</a></li>
-                        <li><a href="index.php?page=admin">Admin</a></li>
+                        
                         <?php
                     }
                     ?>
