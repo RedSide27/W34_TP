@@ -1,102 +1,107 @@
+<script src="js/jquery.js"  type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+		$("#Edit").click(function () {
+		$(".form-control").prop("readonly", false);
+		$("#pwd").prop("type","text")
+		})
+	});
+</script>
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Alex
- * Date: 2017-10-01
- * Time: 23:13
- */
+$mysqli = new mysqli('localhost','root','','minewatch');
+// print_r($_SESSION["login"]);
+$query = "SELECT * FROM users WHERE User_ID = " . $_SESSION["login"];
+//    echo $query;
+$result = $mysqli->query($query);
+
+$row = $result->fetch_assoc();
+
+if (isset($_POST["saveChange"])){
+        $name = $_POST['name'];
+        $lastname = $_POST['lastname'];
+        $username = $_POST['username'];
+        $telephone = $_POST['telephone'];
+        $adresse = $_POST['adresse'];
+        $email = $_POST['email'];
+        $pass = $_POST['pwd'];
+
+        $query = "UPDATE `users` SET `Username`='{$username}',`Password`='{$pass}',`User_LastName`='{$lastname}',`User_FirstName`='{$name}',`User_Email`='{$email}',`User_Inscription`='{$row["User_Inscription"]}',`User_Phone`='{$telephone}',`User_Adresse`='{$adresse}',`IsConfirm`={$row["IsConfirm"]},`IsAdmin`={$row["IsAdmin"]},`FK_Order_ID`={$row["FK_Order_ID"]} WHERE User_ID = " . $_SESSION["login"];
+//	    echo $query;
+    if($mysqli->query($query)){
+        header("Location:index.php?page=Account");
+    }
+}
 
 ?>
 
-<td id="portfolio" xmlns="http://www.w3.org/1999/html">
     <div style="margin-top: 100px" class="container">
         <div class="box">
             <div class="center gap">
-                <h2>*NomUser*</h2>
+                <h2><?=$row["Username"]?></h2>
                 <form style="display: inline;" method="POST" action="#">
-                    <div  class="row" />
+                    <div  class="row" >
                         <div class="col-md-offset-2" >
                          <div class="col-md-10">
                             <div class="form-group">
                                 <label>Prénom</label>
-                                <input style="float: left;" type="text" readonly class="form-control" name="name" />
-                                </button>
+                                <input style="float: left;" type="text" value="<?=$row["User_FirstName"]?>" readonly class="form-control TextCenter" name="name" />
                             </div>
                         </div>
-                    <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-pencil"></span></div>
                     </div>
-            </div>
-	        <div class="row">
 		        <div class="col-md-offset-2" >
 			        <div class="col-md-10">
 				        <div class="form-group">
 					        <label>Nom</label>
-					        <input type="text" readonly class="form-control" name="lastname" />
+					        <input type="text" value="<?=$row["User_LastName"]?>" readonly class="form-control TextCenter" name="lastname" />
 				        </div>
 			        </div>
 		        </div>
-	        </div>
-	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-			        <span class="glyphicon glyphicon-pencil"></span></div>
-			        <div class="row">
 				        <div class="col-md-offset-2" >
 					        <div class="col-md-10">
 						        <div class="form-group">
 							        <label>Username</label>
-							        <input type="text" readonly class="form-control" name="username" />
+							        <input type="text" value="<?=$row["Username"]?>" readonly class="form-control TextCenter" name="username" />
 						        </div>
 					        </div>
 				        </div>
-			        </div>
-	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-			        <span class="glyphicon glyphicon-pencil"></span></div>
-					        <div class="row">
 						        <div class="col-md-offset-2" >
 							        <div class="col-md-10">
 								        <div class="form-group">
 									        <label>Téléphone</label>
-									        <input type="text" readonly class="form-control" name="telephone" />
+									        <input type="text" value="<?=$row["User_Phone"]?>" readonly class="form-control TextCenter" name="telephone" />
 								        </div>
 							        </div>
 						        </div>
-					        </div>
-	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-			        <span class="glyphicon glyphicon-pencil"></span></div>
-							        <div class="row">
 								        <div class="col-md-offset-2" >
 									        <div class="col-md-10">
 										        <div class="form-group">
 											        <label>Adresse</label>
-											        <input type="text" readonly class="form-control" name="adresse" />
+											        <input type="text" value="<?=$row["User_Adresse"]?>" readonly class="form-control TextCenter" name="adresse" />
 										        </div>
 									        </div>
 								        </div>
-							        </div>
-	        <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-			        <span class="glyphicon glyphicon-pencil"></span></div>
-            <div class="row">
                 <div class="col-md-offset-2" >
                     <div class="col-md-10">
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" readonly class="form-control" name="email" />
+                            <input type="text" value="<?=$row["User_Email"]?>" readonly class="form-control TextCenter" name="email" />
                         </div>
                     </div>
                 </div>
-                <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-pencil"></span></div>
-            <div class="row">
                 <div class="col-md-offset-2" >
                     <div class="col-md-10">
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" readonly class="form-control" name="pwd" />
+                        <input id="pwd" type="password" value="<?= $row["Password"]?>" readonly class="form-control TextCenter" name="pwd" />
                     </div>
                 </div>
-                <div><button style="float: left; margin-top: 28px;" type="button" class="btn btn-default btn-sm">
-                        <span class="glyphicon glyphicon-pencil"></span></div>
-            </div>
+                </div>
+                    </div>
+	                <div><button id="Edit" type="button" class="btn btn-default btn-sm">
+			                <span class="glyphicon glyphicon-pencil"></span>
+			                <button name="saveChange" type="submit" class="btn btn-default btn-sm">
+				                <span class="glyphicon glyphicon-floppy-saved"></span>
+	                </div>
 	        <!--fin-------------------------------------------------------------------------------------->
 	</form>
 

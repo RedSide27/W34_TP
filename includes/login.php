@@ -30,7 +30,7 @@ if(isset($_POST["login"])){
         while($row = $result->fetch_assoc()) {
             if($user == $row['Username'] && $pwd == $row['Password']) {
 
-                $_SESSION["login"] = $user;
+                $_SESSION["login"] = $row["User_ID"];
                 $loginsuccess = true;
                 header("Location:index.php?page=accueil");
             }

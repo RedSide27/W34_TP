@@ -19,8 +19,8 @@ $mysqli = new mysqli('localhost','root','','minewatch');
 <html>
 <body ng-app>
     <section id="pricing">
-        <div class="container" style="margin-top: 100px">
-            <div class="box">
+        <div class="container box" style="margin-top: 100px">
+            <div>
                 <div class="center">
                     <h2>Ajouter Pack de skins</h2>
                 </div><!--/.center-->
@@ -31,6 +31,7 @@ $mysqli = new mysqli('localhost','root','','minewatch');
                         <option>Minecraft</option>
                     </select>
                 </div>
+		            <div>
                 <div class="big-gap"></div>
                 <div id="pricing-table" class="row">
 
@@ -67,9 +68,32 @@ $mysqli = new mysqli('localhost','root','','minewatch');
                             <li class="plan-action"><a href="#" class="btn btn-primary btn-lg">Acheter</a></li>
                         </ul>
                     </div><!--/.col-sm-4-->
-
-                </div>
             </div>
+	        <hr/>
+	            <div class="center"><h2>Ajouter Pack de skins</h2></div>
+	        <div class="col-md-offset-2" >
+		        <div class="col-md-10">
+			        <div class="form-group">
+				        <label>Nom du Skin</label>
+				        <input type="text" value="" class="form-control" name="SkinName" />
+			        </div>
+		        </div>
+	        </div>
+	        <div class="col-md-offset-2" >
+		        <div class="col-md-10">
+			        <div class="form-group">
+				        <input type="file" class="form-control" name="Image" />
+			        </div>
+		        </div>
+	        </div>
+	        <div class="col-md-offset-2" >
+		        <div class="col-md-10">
+			        <div class="form-group">
+				        <input type="submit" class="btn btn-primary" value="Envoyé" name="AddSkin">
+			        </div>
+		        </div>
+	        </div>
+                </div>
         </div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>

@@ -636,3 +636,7 @@ textarea#message {
 .ListAchatClick:hover {
 	cursor: pointer;
 }
+
+.TextCenter {
+  text-align: center;
+}

@@ -1,11 +1,8 @@
 <?php
 $mysqli = new mysqli('localhost','root','','minewatch');
-$query = "SELECT * FROM skin";
+$query = "SELECT * FROM `skin`ORDER BY ((Skin_No * 100) / (Skin_No + Skin_Yes))";
 
 $result = $mysqli->query($query);
-//while ($row = $result->fetch_assoc()) {
-//	echo $row;
-//}
 ?>
 
 
