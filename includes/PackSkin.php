@@ -28,7 +28,7 @@ $cpt = 0;
 				<div class="col-sm-4">
 					<ul class="plan">
 						<li class="plan-name"><?= $row["Pack_Name"] ?></li>
-						<li class="plan-price"><?= $row["Pack_Price"] ?></li>
+						<li class="plan-price"><?= $row["Pack_Price"] ?>$</li>
 						<li><?= $row["Pack_Skin_ID1"] ?></li>
 						<li><?= $row["Pack_Skin_ID2"] ?></li>
 						<li><?= $row["Pack_Skin_ID3"] ?></li>
@@ -46,7 +46,7 @@ $cpt = 0;
 					<div class="col-sm-4">
 						<ul class="plan">
 							<li class="plan-name"><?= $row["Pack_Name"] ?></li>
-							<li class="plan-price"><?= $row["Pack_Price"] ?></li>
+							<li class="plan-price"><?= $row["Pack_Price"] ?>$</li>
 							<li><?= $row["Pack_Skin_ID1"] ?></li>
 							<li><?= $row["Pack_Skin_ID2"] ?></li>
 							<li><?= $row["Pack_Skin_ID3"] ?></li>
@@ -63,7 +63,7 @@ $cpt = 0;
 					<div class="col-sm-4">
 						<ul class="plan featured">
 							<li class="plan-name"><?= $row["Pack_Name"] ?></li>
-							<li class="plan-price"><?= $row["Pack_Price"] ?></li>
+							<li class="plan-price"><?= $row["Pack_Price"] ?>$</li>
 							<li><?= $row["Pack_Skin_ID1"] ?></li>
 							<li><?= $row["Pack_Skin_ID2"] ?></li>
 							<li><?= $row["Pack_Skin_ID3"] ?></li>

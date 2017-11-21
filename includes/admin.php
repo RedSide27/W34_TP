@@ -1,6 +1,6 @@
 <?php
 $mysqli = new mysqli('localhost','root','','minewatch');
-
+if(isset($_))
 	if(isset($_POST["SendPack"])){
 		$PackName = $_POST["nom"];
 		$Prix = $_POST["prix"];
@@ -23,14 +23,14 @@ $mysqli = new mysqli('localhost','root','','minewatch');
             <div>
                 <div class="center">
                     <h2>Ajouter Pack de skins</h2>
+                    <?php
+                    if(isset($_SESSION["UploadIMG"])) {
+                        echo $_SESSION["UploadIMG"];
+                        unset($_SESSION["UploadIMG"]);
+                    }
+                    ?>
                 </div><!--/.center-->
 	            <form method="post" action="#">
-                <div class="center">
-                    <select>
-                        <option>Overwatch</option>
-                        <option>Minecraft</option>
-                    </select>
-                </div>
 		            <div>
                 <div class="big-gap"></div>
                 <div id="pricing-table" class="row">
@@ -59,7 +59,7 @@ $mysqli = new mysqli('localhost','root','','minewatch');
                     <div style="background-color: #5bc0de;margin-left: 50px" class="col-sm-4">
                         <ul class="plan">
                             <li class="plan-name">{{nomPack}}</li>
-                            <li class="plan-price">{{prixPack}}</li>
+                            <li class="plan-price">{{prixPack | currency}}</li>
                             <li>{{item1}}</li>
                             <li>{{item2}}</li>
                             <li>{{item3}}</li>

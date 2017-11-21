@@ -1,4 +1,5 @@
 <?php
+session_start();
 $_SESSION["UploadIMGTEST"] = false;
 $target_dir = "../images/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -22,7 +23,7 @@ if (file_exists($target_file)) {
     echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
-// Check file size
+// Check file size;
 if ($_FILES["fileToUpload"]["size"] > 500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
@@ -38,10 +39,9 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-        $_SESSION["UploadIMGTEST"] = true;
-        $_SESSION["UploadIMG"] = "<div class='alert alert-success'><strong>Success!</strong> Image Enregistrer avec Succèes</div>";
-        header("Location:..\index.php?page=admin");
+        $_SESSION["UploadIMG"] = "<div class='alert alert-success'><a href=\"#\" class=\"close\" data-dismiss=\"alert\" aria-label=\"close\">&times;</a> <strong>Success!</strong> Image Enregistrer avec Succèes</div>";
+        header("Location: ../index.php?page=admin");
+        exit;
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
